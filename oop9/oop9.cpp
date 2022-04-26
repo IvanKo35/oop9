@@ -13,11 +13,12 @@ int main()
     CountryHouse house1(3000000);
     CountryHouse house2(15000000);
 
-    vector <Property*> ptr_m = {&flat1, &flat2, &flat3, &Toyota, &Kia, &house1, &house2};
+    Property* ptr_m[] = { &flat1, &flat2, &flat3, &Toyota, &Kia, &house1, &house2};
 
-    for (auto& i : ptr_m)
+    for (int i = 0; i < 7; i++)
     {
-        cout << "Your tax is " << i->tax() << endl;
+        cout << "Your tax is " << ptr_m[i]->tax() << endl;
     }
 
+    return 0;
 }
