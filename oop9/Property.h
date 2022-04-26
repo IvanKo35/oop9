@@ -1,18 +1,26 @@
 #pragma once
 #include <iostream>;
+
 class Property
 {
 public:
+	Property() 
+	{
+	}
 	int worth;
 	Property(int worth)
 	{
 		this->worth = worth;
 	}
 	virtual int tax();
-
-	~Property()
+	Property(const Property& property) 
 	{
-		std::cout << "Desctuct.." << std::endl;
+		this->worth = property.worth;
+	}
+
+	virtual ~Property()
+	{
+		//std::cout << "destructed" << std::endl;
 	}
 };
 
