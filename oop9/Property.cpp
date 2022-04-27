@@ -1,9 +1,6 @@
 #include "Property.h"
 
-int Property::tax()
-{
-    return 0;
-}
+
 
 int Apartment::tax()
 {

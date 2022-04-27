@@ -3,16 +3,13 @@
 
 class Property
 {
-public:
-	Property() 
-	{
-	}
+protected:
 	int worth;
-	Property(int worth)
-	{
-		this->worth = worth;
-	}
-	virtual int tax();
+public:
+	Property() {}
+	
+	Property(int worth) : worth(worth) {}
+	virtual int tax() = 0;
 	Property(const Property& property) 
 	{
 		this->worth = property.worth;
@@ -27,17 +24,14 @@ public:
 class Apartment : public Property
 {
 public:
-	Apartment(int worth) : Property(worth)
-	{
-		this->worth = worth;
-	}
+	Apartment(int worth) : Property(worth) {}
 	int tax();
 };
 
 class Car : public Property
 {
 public:
-	Car(int worth) : Property(worth)
+	Car(int worth)
 	{
 		this->worth = worth;
 	}
@@ -47,10 +41,7 @@ public:
 class CountryHouse : public Property
 {
 public:
-	CountryHouse(int worth) : Property(worth)
-	{
-		this->worth = worth;
-	}
+	CountryHouse(int worth) : Property(worth) {}
 	int tax();
 };
 
